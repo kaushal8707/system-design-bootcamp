@@ -55,12 +55,34 @@
     
     
     
- # Where It is Necessary? 
+ # Where Is It Necessary? 
 
    1. Computation Takes a lot of Time.
 
+    when computations takes more time then we make the process as asynchronous as we saw bakery example. 
+
+    suppose you have open a web pages like flipkart.com or google.com it open immediately but processing is going in background
+    because that is asynchronous page get loaded immediately but process still under processing which is asynchronous. 
+        If we not make this as an asynchronous then manner will be sequential until and unless our all backgroud task not done
+        till then we will wait and our web page was getting loading an loading an loading...we will wait for a loag time for a 
+        web page to open, in this case user experience will go wrong.
 
    2. Scalability of Application
 
+    If You want to make your system more scalable then also you have to use asynchronous communication. 
+
+    for an example there is a function with 4 line...1st line fetch data from db, 2nd manupulation on code, 3rd sending a notification
+    and 4th sending a response back. so for all user all 4 line of code will run...but the 3rd line will take more time to respond
+    and since there is no dependencies on it so we can make it as an asynchronous call.
+
+    so, what will happen for me all 4 line will run where 3rd line will be running in a background...for the 2nd person also all 4 line
+    will get run where 3rd line will be running in background. so what is happening more and more people are able to sending a REQUEST
+    if it was synchronous then processing time get will increased.
 
    3. Avoid Cascading failure
+
+    suppose I am a client and sending a REQUEST to a person 100 request per second but that person are able to send only 10 response per 
+    second so in this case that person will be overloaded with a requests so what we can do we will make this communication as a asynchronous.
+
+ ![img_4.png](img_4.png)
+ 
